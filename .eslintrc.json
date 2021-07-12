@@ -1,0 +1,57 @@
+{
+  "globals": {
+    "module": false,
+    "React": true
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "amd": true,
+    "jest": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:react-hooks/recommended"],
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "16.4"
+    },
+    "propWrapperFunctions": ["forbidExtraProps"]
+  },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true,
+      "legacyDecorators": true
+    },
+    "ecmaVersion": 2017,
+    "sourceType": "module"
+  },
+  "plugins": ["react", "react-hooks"],
+  "rules": {
+    "indent": [
+      0,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "react/jsx-uses-vars": 2,
+    "linebreak-style": ["error", "unix"],
+    "semi": 0,
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "none"
+      }
+    ],
+    "require-yield": "off",
+    "no-cond-assign": "off",
+    "react/display-name": 0,
+    "react/jsx-no-target-blank": [0, { "enforceDynamicLinks": "always" }],
+    "react/prop-types": "warn",
+    "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+  }
+}
