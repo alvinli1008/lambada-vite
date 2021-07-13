@@ -15,19 +15,12 @@ const App = () => {
   useEffect(() => {
     const mergeFunc = () => {
       //
+      const routes = [];
+      const models = {};
       const context = import.meta.globEager('./views/**/index.jsx');
-      const views = Object.keys(context);
-      const merge = views.reduce(
-        (a, b) => {
-          const view = context[b].default;
-          return {
-            routes: a.routes.concat(view.routes),
-            models: Object.assign(a.models, view.models)
-          };
-        },
-        { routes: [], models: {} }
-      );
-      setApp({ ...merge, loading: false });
+      const views = Object.keys(context).sort((a, b) => (a == './views/frame/index.jsx' ? -1 : 1));
+      views.map((key) => context[key].default({ routes, models }));
+      setApp({ routes, models, loading: false });
     };
 
     mergeFunc();
