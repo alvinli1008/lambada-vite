@@ -2,20 +2,12 @@ import React, { Suspense } from 'react';
 import { Switch } from 'react-router-dom';
 import { RouteWithSubRoutes } from '~/components';
 import PropTypes from 'prop-types';
+import Headers from './Header';
 
-function Home({ routes, history }) {
+const Home = ({ routes, history }) => {
   return (
-    <div>
-      {routes.map((item) => (
-        <a
-          key={item.path}
-          onClick={() => {
-            history.push(item.path);
-          }}
-        >
-          {item.path}
-        </a>
-      ))}
+    <React.Fragment>
+      <Headers history={history} />
       <Suspense fallback={<div>loading....</div>}>
         <Switch>
           {(routes || [])
@@ -25,9 +17,9 @@ function Home({ routes, history }) {
             ))}
         </Switch>
       </Suspense>
-    </div>
+    </React.Fragment>
   );
-}
+};
 
 Home.propTypes = {
   routes: PropTypes.array,

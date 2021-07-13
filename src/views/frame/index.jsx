@@ -19,6 +19,4 @@ export default ({ routes, models }) => {
       }
     ]
   );
-
-  // Object.assign(models, {  });
 };

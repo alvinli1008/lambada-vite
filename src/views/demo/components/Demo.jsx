@@ -6,8 +6,8 @@ import { Button } from 'antd';
 
 const Demo = ({ demo }) => {
   return (
-    <div>
-      <span className="tw-text-blue-600">sum: {demo.sum}</span>
+    <div className="tw-p-10">
+      <div className="tw-text-blue-600 "> 1sum: {demo.sum}</div>
       <Button
         type="primary"
         onClick={() => {

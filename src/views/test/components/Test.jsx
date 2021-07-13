@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Test() {
-  return <div>Test</div>;
+  return <div className="tw-p-10">Test</div>;
 }
 
 export default Test;
