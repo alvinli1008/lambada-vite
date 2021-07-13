@@ -14,7 +14,7 @@ const App = () => {
 
   useEffect(() => {
     const mergeFunc = () => {
-      //
+      // 合并各模块 routes models
       const routes = [];
       const models = {};
       const context = import.meta.globEager('./views/**/index.jsx');

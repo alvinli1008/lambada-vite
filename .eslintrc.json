@@ -30,7 +30,7 @@
   },
   "plugins": ["react", "react-hooks"],
   "rules": {
-    "no-console": "error",
+    "no-console": "warn",
     "no-debugger": "error",
     "indent": [
       0,
