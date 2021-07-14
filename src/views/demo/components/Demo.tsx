@@ -1,13 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { inject, observer } from 'mobx-react';
+import { observer } from 'mobx-react';
 import { set } from 'mobx';
 import { Button } from 'antd';
+import { useStores } from '~/hooks';
 
-const Demo = ({ demo }) => {
+const Demo = () => {
+  const { demo } = useStores();
+
   return (
     <div className="tw-p-10">
-      <div className="tw-text-blue-600 "> sum: {demo.sum}</div>
+      <div className="tw-text-blue-600 ">sum: {demo.sum}</div>
       <Button
         type="primary"
         onClick={() => {
@@ -19,8 +22,9 @@ const Demo = ({ demo }) => {
     </div>
   );
 };
+
 Demo.propTypes = {
   demo: PropTypes.object
 };
 
-export default inject('demo')(observer(Demo));
+export default observer(Demo);
