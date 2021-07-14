@@ -1,7 +1,19 @@
 import React from 'react';
+// import { inject, observer } from 'mobx-react';
 
-function Test() {
-  return <div className="tw-p-10">Test</div>;
+// class Test extends React.Component {
+  
+//   render() {
+//     return (
+//       <div>test</div>
+//     )
+//   }
+// }
+
+const Test = () => {
+  return (
+    <div>test123</div>
+  )
 }
 
 export default Test;

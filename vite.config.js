@@ -1,7 +1,7 @@
 /* eslint-env node */
 import { defineConfig } from 'vite';
 import reactRefresh from '@vitejs/plugin-react-refresh'; // 提供 React Fast Refresh 支持
-import legacy from '@vitejs/plugin-legacy'; // 为打包后的文件提供传统浏览器兼容性支持
+// import legacy from '@vitejs/plugin-legacy'; // 为打包后的文件提供传统浏览器兼容性支持
 import vitePluginImp from 'vite-plugin-imp'; // 自动加载组件样式
 import path from 'path';
 import { visualizer } from 'rollup-plugin-visualizer'; // 打包体积分析
@@ -16,7 +16,7 @@ const env = process.argv[process.argv.length - 1];
 export default defineConfig({
   plugins: [
     reactRefresh(),
-    legacy(),
+    // legacy(),
     vitePluginImp({
       libList: [
         {
