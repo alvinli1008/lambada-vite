@@ -6,7 +6,7 @@ module.exports = {
   important: true,
   purge: {
     // eslint-disable-next-line no-undef
-    content: ['./src/**/*.{js,jsx}']
+    content: ['./src/**/*.{js,jsx,ts,tsx}']
   },
   theme: {
     extend: {

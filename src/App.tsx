@@ -17,9 +17,11 @@ const App = () => {
       // 合并各模块 routes models
       const routes = [];
       const models = {};
-      const context = import.meta.globEager('./views/**/index.jsx');
+      const context = import.meta.globEager('./views/**/index.tsx');
+
+      console.log('use', context)
       Object.keys(context)
-        .sort((a, b) => (a == './views/frame/index.jsx' ? -1 : 1))
+        .sort((a, b) => (a == './views/frame/index.tsx' ? -1 : 1))
         .map((key) => context[key].default({ routes, models }));
       setApp({ routes, models, loading: false });
     };
