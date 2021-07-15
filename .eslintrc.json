@@ -9,7 +9,13 @@
     "amd": true,
     "jest": true
   },
-  "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:react-hooks/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["react", "react-hooks", "@typescript-eslint"],
   "settings": {
     "react": {
       "createClass": "createReactClass",
@@ -18,7 +24,7 @@
     },
     "propWrapperFunctions": ["forbidExtraProps"]
   },
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
@@ -28,7 +34,6 @@
     "ecmaVersion": 2020,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks"],
   "rules": {
     "no-console": "warn",
     "no-debugger": "error",
@@ -52,8 +57,11 @@
     "no-cond-assign": "off",
     "react/display-name": 0,
     "react/jsx-no-target-blank": [0, { "enforceDynamicLinks": "always" }],
-    "react/prop-types": "warn",
     "react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
-    "react-hooks/exhaustive-deps": "warn" // Checks effect dependencies
+    "react-hooks/exhaustive-deps": "warn", // Checks effect dependencies
+    "react/prop-types": 0,
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/no-non-null-assertion": "off"
   }
 }
