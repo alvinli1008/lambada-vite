@@ -1,18 +1,8 @@
 import React from 'react';
-import { Route, RouteComponentProps, RouteProps } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import pick from 'lodash/pick';
 
-interface IRoute {
-  path?: string | string[];
-  exact?: boolean;
-  strict?: boolean;
-  sensitive?: boolean;
-  location?: RouteComponentProps['location'];
-  routes?: RouteProps;
-  component: React.ElementType;
-}
-
-const RouteWithSubRoutes = (route: IRoute): JSX.Element => (
+const RouteWithSubRoutes = (route: any): JSX.Element => (
   <Route
     {...pick(route, ['path', 'exact', 'strict', 'sensitive', 'location'])}
     render={(props) => (
@@ -21,5 +11,6 @@ const RouteWithSubRoutes = (route: IRoute): JSX.Element => (
     )}
   />
 );
+
 RouteWithSubRoutes.displayName = 'RouteWithSubRoutes';
 export default RouteWithSubRoutes;

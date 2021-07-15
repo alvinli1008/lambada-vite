@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import menu from '../models/menu';
 import classnames from 'classnames';
 import { IHeaderProps } from '../types/header';
@@ -26,10 +25,6 @@ const Header = ({ history }: IHeaderProps): JSX.Element => {
       ))}
     </div>
   );
-};
-
-Header.propTypes = {
-  history: PropTypes.object
 };
 
 export default Header;

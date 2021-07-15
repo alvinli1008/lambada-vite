@@ -10,7 +10,7 @@ interface IApp {
   app: IModuleProps;
 }
 
-class App extends Component<never, IApp> {
+class App extends Component<unknown, IApp> {
   state = {
     loading: true,
     app: {
