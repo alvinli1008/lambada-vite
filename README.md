@@ -1,4 +1,4 @@
-## vite antd tailwind react
+## react vite antd tailwind mobx
 
 ### Install 
 ```
