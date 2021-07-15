@@ -2,15 +2,12 @@
 
 ### Install 
 ```
-
   npm i
-
 ```
 
 
 ### 模块化
 ```
-
 views
   demo
     assets
@@ -28,7 +25,6 @@ views
       .map((key) => context[key].default(app));
   };
   mergeFunc(app);
-
 ```
    
 
@@ -38,7 +34,6 @@ views
 但 jsx 在加入(如下) babel.config.js 还是不生效；
 
 ```
-
   'use strict';
 
   module.exports = {
@@ -48,14 +43,12 @@ views
       ['@babel/plugin-proposal-class-properties', { loose: true }]
     ]
   };
-
 ```
 
 2：mobx-react 函数式组件 inject 注入 model 时 热更新失效，
 但 class 的模式不会；
 
 ```
-
   import { inject, observer } from 'mobx-react';
 
   const Demo = ({ demo }) => {
@@ -63,5 +56,20 @@ views
   }
 
   export default inject('demo')(observer(Demo));
+```
+
+无奈之举 换了种写法
+```
+  import { observer } from 'mobx-react';
+const useStores = () => {
+  return React.useContext(MobXProviderContext);
+};
+
+const Demo = () => {
+  const { demo } = useStores();
+
+}
+
+export default observer(Demo);
 
 ```
