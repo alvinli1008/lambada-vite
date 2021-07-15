@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Headers from './Header';
 import { IHome } from '../types/home';
 
-const Home = ({ routes, history }: IHome) => {
+const Home = ({ routes, history }: IHome): JSX.Element => {
   return (
     <React.Fragment>
       <Headers history={history} />

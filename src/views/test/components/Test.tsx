@@ -3,7 +3,7 @@ import { inject, observer } from 'mobx-react';
 @inject('test')
 @observer
 class Test extends React.Component {
-  render() {
+  render(): JSX.Element {
     return <div>test</div>;
   }
 }

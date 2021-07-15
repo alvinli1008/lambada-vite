@@ -4,7 +4,8 @@ import RouteWithSubRoutes from './components/RouteWithSubRoutes';
 import { ConfigProvider } from 'antd';
 import { Provider } from 'mobx-react';
 import './App.css';
-class App extends Component {
+
+class App extends Component<never, IApp> {
   state = {
     loading: true,
     app: {
@@ -13,20 +14,20 @@ class App extends Component {
     }
   };
 
-  componentDidMount() {
+  componentDidMount(): void {
     const { app } = this.state;
-    const mergeFunc = (app: any) => {
+    const mergeFunc = (app: IModuleProps) => {
       // 合并各模块 routes models
       const context = import.meta.globEager('./views/**/index.tsx');
       return Object.keys(context)
-        .sort((a, b) => (a == './views/frame/index.tsx' ? -1 : 1))
+        .sort((a) => (a == './views/frame/index.tsx' ? -1 : 1))
         .map((key) => context[key].default(app));
     };
     mergeFunc(app);
     this.setState({ app, loading: false });
   }
 
-  render() {
+  render(): false | JSX.Element {
     const { app, loading } = this.state;
     return (
       !loading && (

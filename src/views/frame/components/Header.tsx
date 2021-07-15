@@ -4,7 +4,7 @@ import menu from '../models/menu';
 import classnames from 'classnames';
 import { IHeaderProps } from '../types/header';
 
-const Header = ({ history }: IHeaderProps) => {
+const Header = ({ history }: IHeaderProps): JSX.Element => {
   const jumpToPage = (path: string) => {
     history.push(path);
   };

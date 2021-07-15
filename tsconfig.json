@@ -10,18 +10,12 @@
     "checkJs": false,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "skipLibCheck": true,
     "jsx": "react",
     "paths": { "~/*": ["src/*"] },
-    "typeRoots": [
-      "node_modules/@types",
-      "./src/typings"
-    ],
+    "typeRoots": ["node_modules/@types", "./src/typings"],
     "noImplicitAny": true,
     "noImplicitThis": false,
     "noEmitOnError": false,
@@ -32,11 +26,6 @@
     "downlevelIteration": false,
     "experimentalDecorators": true
   },
-  "include": [
-    "src/**/*",
-    "./declaration.d.ts"
-  ],
-  "exclude": [
-    "./node_modules"
-  ]
+  "include": ["src/**/*", "./declaration.d.ts"],
+  "exclude": ["./node_modules"]
 }
