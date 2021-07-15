@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import Home from './components/Home';
 
 const homeRoutes = [
@@ -9,7 +9,7 @@ const homeRoutes = [
   }
 ];
 
-export default ({ routes, models }) => {
+export default ({ routes }: IModuleProps): void => {
   routes.push(
     ...[
       {

@@ -2,9 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import menu from '../models/menu';
 import classnames from 'classnames';
+import { IHeaderProps } from '../types/header';
 
-const Header = ({ history }) => {
-  const jumpToPage = (path) => {
+const Header = ({ history }: IHeaderProps) => {
+  const jumpToPage = (path: string) => {
     history.push(path);
   };
   return (
