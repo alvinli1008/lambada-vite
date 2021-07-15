@@ -5,6 +5,11 @@ import { ConfigProvider } from 'antd';
 import { Provider } from 'mobx-react';
 import './App.css';
 
+interface IApp {
+  loading: boolean;
+  app: IModuleProps;
+}
+
 class App extends Component<never, IApp> {
   state = {
     loading: true,

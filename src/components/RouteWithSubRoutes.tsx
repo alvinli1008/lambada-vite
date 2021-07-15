@@ -1,13 +1,18 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, RouteComponentProps, RouteProps } from 'react-router-dom';
 import pick from 'lodash/pick';
 
-/**
- * wrap <Route> and use this everywhere instead, then when
- *  sub routes are added to any route it'll work
- * @param {Route} route with subroutes
- */
-const RouteWithSubRoutes = (route: any) => (
+interface IRoute {
+  path?: string | string[];
+  exact?: boolean;
+  strict?: boolean;
+  sensitive?: boolean;
+  location?: RouteComponentProps['location'];
+  routes?: RouteProps;
+  component: React.ElementType;
+}
+
+const RouteWithSubRoutes = (route: IRoute): JSX.Element => (
   <Route
     {...pick(route, ['path', 'exact', 'strict', 'sensitive', 'location'])}
     render={(props) => (
