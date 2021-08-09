@@ -23,6 +23,7 @@ class App extends Component<unknown, IApp> {
     const { app } = this.state;
     const mergeFunc = (app: IModuleProps) => {
       // 合并各模块 routes models
+      // @ts-ignore
       const context = import.meta.globEager('./views/**/index.tsx');
       return Object.keys(context)
         .sort((a) => (a == './views/frame/index.tsx' ? -1 : 1))
