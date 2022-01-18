@@ -1,5 +1,3 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-
 module.exports = {
   mode: 'jit',
   prefix: 'tw-',
@@ -9,12 +7,7 @@ module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx}']
   },
   theme: {
-    extend: {
-      fontWeight: ['hover', 'focus'],
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans]
-      }
-    }
+    extend: {}
   },
   variants: {},
   plugins: []
