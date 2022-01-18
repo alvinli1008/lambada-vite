@@ -12,9 +12,9 @@ module.exports = {
     extend: {
       fontWeight: ['hover', 'focus'],
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      },
-    },
+        sans: ['Inter var', ...defaultTheme.fontFamily.sans]
+      }
+    }
   },
   variants: {},
   plugins: []

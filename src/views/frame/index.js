@@ -1,15 +1,15 @@
-import * as React from 'react';
+import React from 'react';
 import Home from './components/Home';
 
 const homeRoutes = [
   {
     path: '/',
     exact: true,
-    component: () => <div />
+    component: () => ''
   }
 ];
 
-export default ({ routes }: IModuleProps): void => {
+export default ({ routes }) => {
   routes.push(
     ...[
       {

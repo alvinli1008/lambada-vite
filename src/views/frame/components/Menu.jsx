@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Menu(): JSX.Element {
+function Menu() {
   return <div>Menu</div>;
 }
 

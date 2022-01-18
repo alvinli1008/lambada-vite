@@ -1,10 +1,13 @@
 import React from 'react';
 import menu from '../models/menu';
 import classnames from 'classnames';
-import { IHeaderProps } from '../types/header';
+import { PropTypes } from 'prop-types';
+import { useHistory } from 'react-router-dom';
 
-const Header = ({ history }: IHeaderProps): JSX.Element => {
-  const jumpToPage = (path: string) => {
+const Header = () => {
+  const history = useHistory();
+
+  const jumpToPage = (path) => {
     history.push(path);
   };
   return (
@@ -14,17 +17,18 @@ const Header = ({ history }: IHeaderProps): JSX.Element => {
           key={item.path}
           onClick={() => jumpToPage(item.path)}
           className={classnames(
-            'tw-px-2 tw-mx-2 tw-leading-[58px] hover:tw-text-blue-500 tw-inline-block tw-cursor-pointer',
-            {
-              ['tw-border-solid tw-border-b-2 tw-border-blue-500']: item.path === location.pathname
-            }
+            'tw-px-2 tw-mx-2 tw-leading-[58px] hover:tw-text-blue-500 tw-inline-block tw-cursor-pointer'
           )}
         >
-          {item.name}
+          {item.text}
         </a>
       ))}
     </div>
   );
+};
+
+Header.propTypes = {
+  // history: PropTypes.object
 };
 
 export default Header;

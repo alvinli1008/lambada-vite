@@ -1,13 +1,13 @@
 import React, { Suspense } from 'react';
 import { Switch } from 'react-router-dom';
 import { RouteWithSubRoutes } from '~/components';
-import Headers from './Header';
-import { IHome } from '../types/home';
+import { PropTypes } from 'prop-types';
+import Header from './Header';
 
-const Home = ({ routes, history }: IHome): JSX.Element => {
+const Home = ({ routes }) => {
   return (
     <React.Fragment>
-      <Headers history={history} />
+      <Header />
       <Suspense fallback={<div>loading....</div>}>
         <Switch>
           {(routes || [])
@@ -19,6 +19,10 @@ const Home = ({ routes, history }: IHome): JSX.Element => {
       </Suspense>
     </React.Fragment>
   );
+};
+
+Home.propTypes = {
+  routes: PropTypes.array
 };
 
 export default Home;

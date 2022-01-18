@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import pick from 'lodash/pick';
 
-const RouteWithSubRoutes = (route: any): JSX.Element => (
+const RouteWithSubRoutes = (route) => (
   <Route
     {...pick(route, ['path', 'exact', 'strict', 'sensitive', 'location'])}
     render={(props) => (

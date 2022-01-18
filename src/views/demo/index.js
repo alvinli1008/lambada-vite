@@ -1,10 +1,9 @@
-import * as React from 'react';
-import { RouteProps } from 'react-router-dom';
+import React from 'react';
 import demo from './models/demo';
 
-export default ({ routes, models }: IModuleProps): void => {
+export default ({ routes, models }) => {
   routes
-    .filter((r: RouteProps) => r.path === '/')[0]
+    .filter((r) => r.path === '/')[0]
     .routes.push(
       ...[
         {
